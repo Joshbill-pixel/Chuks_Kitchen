@@ -190,8 +190,6 @@ npm install
 npm run dev
 The app will be available at http://localhost:5173
 Build for Production
-bash
-Copy
 # Create optimized build
 npm run build
 
@@ -200,7 +198,7 @@ npm run preview
 Environment Variables
 Create .env file in root:
 env
-Copy
+
 # API Configuration (when backend is ready)
 VITE_API_BASE_URL=https://api.chukkitchen.com
 VITE_STRIPE_PUBLIC_KEY=pk_test_...
