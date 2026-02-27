@@ -90,7 +90,7 @@ export function SignUpPage() {
       localStorage.setItem('pendingVerification', JSON.stringify(userData));
       
       // Navigate to verification page
-      navigate('/verify-email', { state: { email: formData.email } });
+      navigate('/signin', { state: { email: formData.email } });
     } catch (error) {
       setErrors({ submit: 'Registration failed. Please try again.' });
     } finally {
