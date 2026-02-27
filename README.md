@@ -6,7 +6,7 @@ A modern, responsive food delivery web application for authentic Nigerian cuisin
 
 ## 🚀 Live Demo
 
-[View Live Demo](https://your-deployment-url.com) *(Update with your actual URL)*
+[View Live Demo](https://trueminds-food-store.vercel.app/) *(Update with your actual URL)*
 
 ## 📋 Table of Contents
 
@@ -76,21 +76,21 @@ A modern, responsive food delivery web application for authentic Nigerian cuisin
 
 ### Core Technologies
 
-| Technology | Version | Purpose |
-|------------|---------|---------|
-| **React** | 18.x | UI library with hooks and concurrent features |
-| **Vite** | 5.x | Fast development server and optimized builds |
-| **React Router** | 6.x | Declarative client-side routing |
-| **Tailwind CSS** | 3.x | Utility-first CSS framework |
-| **shadcn/ui** | Latest | Accessible, customizable component primitives |
+| Technology       | Version | Purpose                                       |
+|------------------|---------|-----------------------------------------------|
+| **React**        | 18.x    | UI library with hooks and concurrent features |
+| **Vite**         | 5.x     | Fast development server and optimized builds  |
+| **React Router** | 6.x     | Declarative client-side routing               |
+| **Tailwind CSS** | 3.x     | Utility-first CSS framework                   |
+| **shadcn/ui**    | Latest  | Accessible, customizable component primitives |
 
 ### Supporting Libraries
 
-| Library | Purpose |
-|---------|---------|
-| `lucide-react` | Modern icon system |
-| `@radix-ui/react-*` | Headless UI primitives (via shadcn) |
-| `clsx` / `tailwind-merge` | Conditional class utilities |
+| Library                   | Purpose                             |
+|---------------------------|-------------------------------------|
+| `lucide-react`            | Modern icon system                  |
+| `@radix-ui/react-*`       | Headless UI primitives (via shadcn) |
+| `clsx` / `tailwind-merge` | Conditional class utilities         |
 
 ### Why This Stack?
 
@@ -153,18 +153,17 @@ chuks-kitchen/
 ├── tailwind.config.js             # Tailwind customization
 ├── vite.config.js                 # Vite configuration
 └── package.json
-plain
-Copy
+
 
 ### Key Files Explained
 
-| File | Responsibility |
-|------|---------------|
-| `CartContext.jsx` | Manages cart state, persists to localStorage, calculates totals |
-| `foodData.js` | Single source of truth for all menu items and options |
-| `FoodDetailsPage.jsx` | Complex state management for dynamic pricing based on selections |
-| `PaymentPage.jsx` | Multi-method payment flow with validation |
-| `DeliveryDetailsPage.jsx` | Address book management with schedule time picker |
+| File                      | Responsibility                                                   |
+|---------------------------|------------------------------------------------------------------|
+| `CartContext.jsx`         | Manages cart state, persists to localStorage, calculates total   |
+| `foodData.js`             | Single source of truth for all menu items and options            |
+| `FoodDetailsPage.jsx`     | Complex state management for dynamic pricing based on selections |
+| `PaymentPage.jsx`         | Multi-method payment flow with validation                        |
+| `DeliveryDetailsPage.jsx` | Address book management with schedule time picker                |
 
 ---
 
@@ -179,13 +178,13 @@ Copy
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/chuks-kitchen.git
+git clone https://github.com/Joshbill-pixel/Chuks_Kitchen.git
 
 # Navigate to project
-cd chuks-kitchen
+cd Chuks_Kitchen.git
 
 # Install dependencies
-npm install
+npm install 
 
 # Start development server
 npm run dev
@@ -210,115 +209,106 @@ VITE_STRIPE_PUBLIC_KEY=pk_test_...
 VITE_ENABLE_PAYMENT=true
 VITE_ENABLE_SCHEDULING=true
 🎨 Design Interpretation
-Color Palette
-Table
-Copy
-Color	Hex	Usage
-Primary Orange	#f97316	CTAs, prices, active states
-Success Green	#22c55e	Delivered status, success messages
-Error Red	#ef4444	Validation errors, delete actions
-Info Blue	#3b82f6	Bank payment method
-Neutral Gray	#6b7280	Secondary text, borders
-Typography Scale
-Table
-Copy
-Element	Size	Weight
-H1 (Page titles)	1.875rem (30px)	Bold (700)
-H2 (Section headers)	1.5rem (24px)	Semibold (600)
-Body	1rem (16px)	Regular (400)
-Caption	0.875rem (14px)	Regular (400)
-Price	1.25rem (20px)	Bold (700)
-Responsive Breakpoints
-Table
-Copy
-Breakpoint	Width	Layout Changes
-Mobile	< 640px	Single column, stacked cards
-Tablet	640-1024px	2-column grids
-Desktop	> 1024px	Full layout, side-by-side sections
-Figma-to-Code Decisions
-Assumptions Made
-Table
-Copy
-Missing in Design	Implementation Choice
-Hover states	Subtle scale(1.02) + darken color by 10%
-Loading states	Spinner buttons + skeleton screens
-Error states	Inline validation with red borders
-Empty states	Illustrated empty views with CTAs
-Animations	200ms ease transitions on all interactions
-Dark mode	Not implemented (future enhancement)
-Components Built from Scratch
-Schedule Time Picker: Custom modal with date/time selection (not in original design)
-Receipt Modal: Downloadable/printable receipt generator
-Address Manager: Full CRUD for delivery addresses
-Password Strength Meter: Visual indicator with requirements checklist
+** Color Palette
+    Color	Hex	Usage
+    Primary Orange	#f97316	CTAs, prices, active states
+    Success Green	#22c55e	Delivered status, success messages
+    Error Red	#ef4444	Validation errors, delete actions
+    Info Blue	#3b82f6	Bank payment method
+    Neutral Gray	#6b7280	Secondary text, borders
+
+** Typography Scale
+    Element	Size	Weight
+    H1 (Page titles)	1.875rem (30px)	Bold (700)
+    H2 (Section headers)	1.5rem (24px)	Semibold (600)
+    Body	1rem (16px)	Regular (400)
+    Caption	0.875rem (14px)	Regular (400)
+    Price	1.25rem (20px)	Bold (700)
+
+** Responsive Breakpoints
+    Breakpoint	Width	Layout Changes
+    Mobile	< 640px	Single column, stacked cards
+    Tablet	640-1024px	2-column grids
+    Desktop	> 1024px	Full layout, side-by-side sections
+    Figma-to-Code Decisions
+
+** Assumptions Made
+    Missing in Design	Implementation Choice
+    Hover states	Subtle scale(1.02) + darken color by 10%
+    Loading states	Spinner buttons + skeleton screens
+    Error states	Inline validation with red borders
+    Empty states	Illustrated empty views with CTAs
+    Animations	200ms ease transitions on all interactions
+    Dark mode	Not implemented (future enhancement)
+    Components Built from Scratch
+    Schedule Time Picker: Custom modal with date/time selection (not in original design)
+    Receipt Modal: Downloadable/printable receipt generator
+    Address Manager: Full CRUD for delivery addresses
+    Password Strength Meter: Visual indicator with requirements checklist
+    CartIcon Notification bubble on cart icon to show number of items added to the cart.
+
 🔌 API Integration Guide
 Current State
 All data is currently mock-based. To connect to a real backend:
-1. Authentication Endpoints
-JavaScript
-Copy
-// Replace localStorage simulation with actual API calls
+    1. Authentication Endpoints
+    // Replace localStorage simulation with actual API calls
 
-// Sign Up
-POST /api/auth/register
-Body: { email, phone, password, name }
+    // Sign Up
+    POST /api/auth/register
+    Body: { email, phone, password, name }
 
-// Sign In
-POST /api/auth/login
-Body: { email, password }
-Response: { token, user }
+    // Sign In
+    POST /api/auth/login
+    Body: { email, password }
+    Response: { token, user }
 
-// Verify Token
-GET /api/auth/me
-Headers: { Authorization: Bearer ${token} }
-2. Menu Endpoints
-JavaScript
-Copy
-// Get all categories
-GET /api/categories
+    // Verify Token
+    GET /api/auth/me
+    Headers: { Authorization: Bearer ${token} }
+    2. Menu Endpoints
 
-// Get menu items by category
-GET /api/menu?category=jollof-delights
+    // Get all categories
+    GET /api/categories
 
-// Get single item details
-GET /api/menu/:id
-3. Order Endpoints
-JavaScript
-Copy
-// Create order
-POST /api/orders
-Body: { items, address, paymentMethod, scheduledTime }
+    // Get menu items by category
+    GET /api/menu?category=jollof-delights
 
-// Get user orders
-GET /api/orders
+    // Get single item details
+    GET /api/menu/:id
+    3. Order Endpoints
 
-// Get order details
-GET /api/orders/:id
+    // Create order
+    POST /api/orders
+    Body: { items, address, paymentMethod, scheduledTime }
 
-// Track order status
-GET /api/orders/:id/track
-4. Payment Integration
-Replace simulated payment with actual provider:
-JavaScript
-Copy
-// Example Stripe integration
-import { loadStripe } from '@stripe/stripe-js';
+    // Get user orders
+    GET /api/orders
 
-const stripe = await loadStripe(import.meta.env.VITE_STRIPE_PUBLIC_KEY);
+    // Get order details
+    GET /api/orders/:id
 
-const { error, paymentIntent } = await stripe.confirmCardPayment(
-  clientSecret,
-  {
-    payment_method: {
-      card: cardElement,
-      billing_details: { name: cardDetails.name }
-    }
-  }
-);
+    // Track order status
+    GET /api/orders/:id/track
+    4. Payment Integration
+    Replace simulated payment with actual provider:
+
+    // Example Stripe integration
+    import { loadStripe } from '@stripe/stripe-js';
+
+    const stripe = await loadStripe(import.meta.env.VITE_STRIPE_PUBLIC_KEY);
+
+    const { error, paymentIntent } = await stripe.confirmCardPayment(
+      clientSecret,
+      {
+        payment_method: {
+          card: cardElement,
+          billing_details: { name: cardDetails.name }
+        }
+      }
+    );
+
 ⚠️ Limitations & Roadmap
 Current Limitations
-Table
-Copy
 Area	Limitation	Impact
 Backend	All data is mock/localStorage only	No real persistence, no multi-device sync
 Authentication	JWT simulation with localStorage	Vulnerable to XSS, no refresh tokens
@@ -358,9 +348,8 @@ Use functional components with hooks
 Prefer const over let, avoid var
 Destructure props at component level
 Use cn() for conditional Tailwind classes
+
 Git Workflow
-bash
-Copy
 # Create feature branch
 git checkout -b feature/your-feature-name
 
@@ -370,8 +359,7 @@ git commit -m "feat: add schedule time picker"
 # Push and create PR
 git push origin feature/your-feature-name
 Commit Convention
-Table
-Copy
+
 Prefix	Use Case
 feat:	New feature
 fix:	Bug fix
@@ -386,17 +374,4 @@ For questions or issues:
 Email: support@chukkitchen.com
 Phone: +234 801 234 5678
 Built with ❤️ for Nigerian food lovers everywhere
-plain
-Copy
-
 ---
-
-## How to Create the File:
-
-1. **Open your code editor** (VS Code, etc.)
-2. **Create new file** in your project root folder
-3. **Name it**: `README.md`
-4. **Paste all the content above**
-5. **Save the file**
-
-The file will automatically render with Markdown formatting on GitHub or any Markdown viewer.

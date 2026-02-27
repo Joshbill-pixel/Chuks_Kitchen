@@ -34,14 +34,16 @@ export function HomePage() {
 
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="relative lg:h-[941px] sm:h-[800px] h-[600px]">
+        <section className="relative h-[500px] sm:h-[600px] lg:h-[700px]">
           <img
             src="/images/hero-banner.jpg"
             alt="Nigerian Food Spread"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-black/40" />
-          <div className="absolute inset-0 flex flex-col justify-center px-6 sm:px-12 lg:px-16 top-[-50px]">
+          
+          {/* Hero Content */}
+          <div className="absolute inset-0 flex flex-col justify-center px-6 sm:px-12 lg:px-16">
             <div className="max-w-5xl">
               <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-white leading-tight">
                 The Heart of Nigerian Home Cooking
@@ -58,23 +60,25 @@ export function HomePage() {
             </div>
           </div>
 
-          {/* Search Section */}
-          <div className="absolute lg:w-[900px] h-[60px] mx-auto my-auto lg:top-[117vh] w-[350px] top-[71vh] sm:top-[96vh] sm:w-[450px] left-0 right-0">
-            <div className="relative ">
-              <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500" />
-              <Input
-                type="text"
-                placeholder="What are you craving for today?"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="pl-12 py-6 h-[60px] bg-white-300 text-base border-gray-200 shadow-sm"
-              />
+          {/* Search Bar - Positioned at bottom border */}
+          <div className="absolute left-0 right-0 bottom-0 translate-y-1/2 px-4 sm:px-6 lg:px-8">
+            <div className="max-w-3xl mx-auto">
+              <div className="relative bg-white rounded-lg shadow-lg">
+                <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                <Input
+                  type="text"
+                  placeholder="What are you craving for today?"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="w-full pl-12 pr-4 py-4 h-[56px] text-base border-0 shadow-none focus-visible:ring-0 focus-visible:ring-offset-0 rounded-lg"
+                />
+              </div>
             </div>
           </div>
         </section>
 
-        {/* Popular Categories */}
-        <section className="py-12 mt-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+        {/* Popular Categories - Added top padding to account for search bar overlap */}
+        <section className="pt-20 pb-12 px-4 sm:px-6 lg:px-8 bg-gray-50">
           <div className="max-w-7xl mx-auto space-y-8">
             <h2 className="text-2xl sm:text-3xl font-bold text-center text-gray-900 mb-10">
               Popular Categories
@@ -153,7 +157,7 @@ export function HomePage() {
         </section>
 
         {/* New Menu Banner */}
-        <section className="relative h-[600px] sm:h-[600px]">
+        <section className="relative h-[500px] sm:h-[600px]">
           <img
             src="/images/New_menu_banner.png"
             alt="New Menu"

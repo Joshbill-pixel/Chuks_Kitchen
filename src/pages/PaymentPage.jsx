@@ -118,17 +118,12 @@ export function PaymentPage() {
 
       <main className="flex-1 bg-gray-50 py-8">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Security Badge */}
-          <div className="flex items-center justify-center gap-2 mb-6 text-green-600">
-            <Shield className="w-5 h-5" />
-            <span className="text-sm font-medium">Secure SSL Encrypted Transaction</span>
-          </div>
 
           <form onSubmit={handleSubmit} className="bg-white rounded-xl shadow-sm p-6 sm:p-8">
             <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">
               Payment
             </h1>
-            <p className="text-gray-500 mb-6">Complete your order securely</p>
+            <p className="w-full border-2 mt-5 mb-5 border-gray-200"></p>
 
             {/* Payment Method Selection */}
             <div className="mb-8">
@@ -145,17 +140,17 @@ export function PaymentPage() {
                     onClick={() => setPaymentMethod(id)}
                     className={`flex items-center gap-3 px-6 py-4 border-2 rounded-lg transition-all ${
                       paymentMethod === id
-                        ? 'border-orange-500 bg-orange-50'
-                        : 'border-gray-200 hover:border-gray-300'
+                        ? 'border-white bg-white'
+                        : 'border-white hover:border-white'
                     }`}
                   >
                     <div
                       className={`w-5 h-5 rounded-full border-2 flex items-center justify-center ${
-                        paymentMethod === id ? 'border-orange-500' : 'border-gray-300'
+                        paymentMethod === id ? 'border-green-500' : 'border-gray-300'
                       }`}
                     >
                       {paymentMethod === id && (
-                        <div className="w-2.5 h-2.5 bg-orange-500 rounded-full" />
+                        <div className="w-2.5 h-2.5 bg-green-500 rounded-full" />
                       )}
                     </div>
                     <Icon className="w-5 h-5" />
@@ -193,7 +188,7 @@ export function PaymentPage() {
                   </label>
                   <Input
                     type="text"
-                    placeholder="JOHN DOE"
+                    placeholder="Full Name"
                     value={cardDetails.name}
                     onChange={(e) => {
                       setCardDetails({ ...cardDetails, name: e.target.value.toUpperCase() });
@@ -234,7 +229,7 @@ export function PaymentPage() {
                       <Input
                         type="password"
                         placeholder="123"
-                        maxLength={4}
+                        maxLength={3}
                         value={cardDetails.cvv}
                         onChange={(e) => {
                           setCardDetails({ ...cardDetails, cvv: e.target.value.replace(/\D/g, '') });
@@ -348,13 +343,11 @@ export function PaymentPage() {
               )}
             </Button>
 
-            {/* Security Note */}
             <div className="mt-6 flex items-start gap-2 text-xs text-gray-500">
-              <Lock className="w-4 h-4 mt-0.5 flex-shrink-0" />
               <p>
-                Your payment information is encrypted using SSL/TLS technology. 
-                We do not store your full card details on our servers. 
-                This transaction is protected by 3D Secure authentication.
+                Your personal data will be used to process your order, 
+                support your experience throughout this website, 
+                and for other purposes described in our privacy policy.
               </p>
             </div>
           </form>

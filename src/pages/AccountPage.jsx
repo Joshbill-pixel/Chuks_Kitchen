@@ -153,18 +153,6 @@ export function AccountPage() {
     showSuccess('Profile picture removed');
   };
 
-  const handlePasswordChange = () => {
-    navigate('/change-password');
-  };
-
-  const toggleTwoFactor = async () => {
-    if (!userData.twoFactorEnabled) {
-      navigate('/setup-2fa');
-    } else {
-      setShowDeleteConfirm(true); // Reuse modal for confirmation
-    }
-  };
-
   const menuItems = [
     { 
       icon: User, 
@@ -173,34 +161,16 @@ export function AccountPage() {
       description: 'Update your name, phone, and address'
     },
     { 
-      icon: Lock, 
-      label: 'Security Settings', 
-      action: handlePasswordChange,
-      description: 'Change password, enable 2FA'
-    },
-    { 
       icon: MapPin, 
       label: 'Saved Addresses', 
-      action: () => navigate('/addresses'),
+      action: () => navigate('/delivery-details'),
       description: 'Manage delivery addresses'
-    },
-    { 
-      icon: Bell, 
-      label: 'Notifications', 
-      action: () => navigate('/notifications'),
-      description: 'Email and push notification preferences'
     },
     { 
       icon: CreditCard, 
       label: 'Payment Methods', 
-      action: () => navigate('/payment-methods'),
+      action: () => navigate('/payment'),
       description: 'Manage cards and wallets'
-    },
-    { 
-      icon: Heart, 
-      label: 'Favorites', 
-      action: () => navigate('/favorites'),
-      description: 'Your favorite dishes'
     },
     { 
       icon: FileText, 
@@ -253,12 +223,6 @@ export function AccountPage() {
               <div className="flex-1">
                 <h2 className="text-xl font-semibold text-gray-900">{userData.name}</h2>
                 <p className="text-gray-500">{userData.email}</p>
-                <div className="flex items-center gap-2 mt-1">
-                  <div className={`w-2 h-2 rounded-full ${userData.twoFactorEnabled ? 'bg-green-500' : 'bg-gray-300'}`} />
-                  <span className="text-xs text-gray-500">
-                    {userData.twoFactorEnabled ? '2FA Enabled' : '2FA Disabled'}
-                  </span>
-                </div>
               </div>
             </div>
 
@@ -352,38 +316,6 @@ export function AccountPage() {
                 <ChevronRight className="w-5 h-5 text-gray-400" />
               </button>
             ))}
-          </div>
-
-          {/* Security Section */}
-          <div className="bg-white rounded-xl shadow-sm p-6 mb-6">
-            <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
-              <Shield className="w-5 h-5" />
-              Security
-            </h3>
-            
-            <div className="flex items-center justify-between mb-4">
-              <div>
-                <p className="font-medium text-gray-900">Two-Factor Authentication</p>
-                <p className="text-sm text-gray-500">Add an extra layer of security</p>
-              </div>
-              <Button
-                variant={userData.twoFactorEnabled ? "outline" : "default"}
-                onClick={toggleTwoFactor}
-                className={userData.twoFactorEnabled ? '' : 'bg-orange-500 hover:bg-orange-600'}
-              >
-                {userData.twoFactorEnabled ? 'Disable' : 'Enable'}
-              </Button>
-            </div>
-
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="font-medium text-gray-900">Active Sessions</p>
-                <p className="text-sm text-gray-500">Manage your logged-in devices</p>
-              </div>
-              <Button variant="outline" onClick={() => navigate('/sessions')}>
-                View
-              </Button>
-            </div>
           </div>
 
           {/* Danger Zone */}
